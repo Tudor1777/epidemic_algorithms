@@ -1,0 +1,17 @@
+{
+  "snapshot": "data/initial_snapshot.json",
+  "workload": "data/workload.jsonl",
+  "outdir": "out/run_001",
+  "replicas": 20,
+  "ticks": 800,
+  "inject_per_tick": 4,
+  "min_delay": 1,
+  "max_delay": 5,
+  "drop_rate": 0.05,
+  "rumor_budget": 30,
+  "rumor_fanout": 1,
+  "rumor_stop_threshold": 4,
+  "anti_entropy_interval": 25,
+  "anti_entropy_sample": 2000,
+  "seed": 11
+}
