@@ -3,6 +3,7 @@
   "workload": "data/workload.jsonl",
   "outdir": "out/run_001",
   "replicas": 20,
+  "algo": "rumor",
   "ticks": 800,
   "inject_per_tick": 4,
   "min_delay": 1,
@@ -11,7 +12,5 @@
   "rumor_budget": 30,
   "rumor_fanout": 1,
   "rumor_stop_threshold": 4,
-  "anti_entropy_interval": 25,
-  "anti_entropy_sample": 2000,
   "seed": 11
 }

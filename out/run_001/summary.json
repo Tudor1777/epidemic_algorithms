@@ -3,10 +3,9 @@
   "ticks": 800,
   "workload_ops_total": 120000,
   "workload_ops_injected": 3200,
-  "converged_at_tick": null,
-  "network_msgs_sent": 1514794,
-  "network_msgs_dropped": 75992,
-  "replica_ops_sent_total": 1514794,
-  "replica_ops_received_total": 739036,
-  "replica_ops_applied_total": 41351
+  "network_msgs_sent": 1514028,
+  "network_msgs_dropped": 75951,
+  "replica_ops_sent_total": 1514028,
+  "replica_ops_received_total": 739256,
+  "replica_ops_applied_total": 41393
 }
