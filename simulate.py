@@ -5,6 +5,7 @@ import json
 import os
 import random
 from typing import Dict, List
+from datetime import datetime
 
 from model import Record, Operation, Timestamp
 from replica import Replica
@@ -47,7 +48,7 @@ def main() -> None:
     ap.add_argument("--outdir", default="out/run_001")
     ap.add_argument("--replicas", type=int, default=20)
 
-    ap.add_argument("--algo", choices=["rumor", "anti_entropy"], default="rumor")
+    ap.add_argument("--algo", choices=["rumor", "anti_entropy", "direct_mail"], default="rumor")
 
     ap.add_argument("--ticks", type=int, default=800)
     ap.add_argument("--inject_per_tick", type=int, default=4)
@@ -70,6 +71,9 @@ def main() -> None:
 
     ap.add_argument("--seed", type=int, default=11)
     args = ap.parse_args()
+
+    run_id = datetime.now().strftime("%Y%m%d_%H%M%S")
+    args.outdir = os.path.join(args.outdir, f"{args.algo}_{run_id}")
 
     ensure_dir(args.outdir)
     ensure_dir(os.path.join(args.outdir, "final_states"))

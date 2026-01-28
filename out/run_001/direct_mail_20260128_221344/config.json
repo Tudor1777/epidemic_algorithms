@@ -1,0 +1,19 @@
+{
+  "snapshot": "data/initial_snapshot.json",
+  "workload": "data/workload.jsonl",
+  "outdir": "out/run_001\\direct_mail_20260128_221344",
+  "replicas": 20,
+  "algo": "direct_mail",
+  "ticks": 400,
+  "inject_per_tick": 10,
+  "min_delay": 1,
+  "max_delay": 5,
+  "drop_rate": 0.05,
+  "metrics_every": 10,
+  "rumor_budget": 30,
+  "rumor_fanout": 1,
+  "rumor_stop_threshold": 4,
+  "anti_interval": 25,
+  "anti_sample": 2000,
+  "seed": 11
+}
