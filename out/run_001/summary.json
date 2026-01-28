@@ -1,11 +1,13 @@
 {
-  "replicas": 20,
-  "ticks": 800,
-  "workload_ops_total": 120000,
-  "workload_ops_injected": 3200,
-  "network_msgs_sent": 1514028,
-  "network_msgs_dropped": 75951,
-  "replica_ops_sent_total": 1514028,
-  "replica_ops_received_total": 739256,
-  "replica_ops_applied_total": 41393
+  "algo": "anti_entropy",
+  "replicas": 10,
+  "ticks": 400,
+  "workload_ops_total": 20000,
+  "workload_ops_injected": 4000,
+  "final_exact_residue": 767,
+  "network_msgs_sent": 393,
+  "network_msgs_dropped": 14,
+  "replica_ops_sent_total": 393,
+  "replica_ops_received_total": 4000,
+  "replica_ops_applied_total": 12090
 }

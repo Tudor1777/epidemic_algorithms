@@ -1,9 +1,9 @@
 {
   "snapshot": "data/initial_snapshot.json",
   "workload": "data/workload.jsonl",
-  "outdir": "out/run_001",
+  "outdir": "out/rumor_run_001",
   "replicas": 10,
-  "algo": "anti_entropy",
+  "algo": "rumor",
   "ticks": 400,
   "inject_per_tick": 10,
   "min_delay": 1,
@@ -13,7 +13,7 @@
   "rumor_budget": 30,
   "rumor_fanout": 1,
   "rumor_stop_threshold": 4,
-  "anti_interval": 20,
+  "anti_interval": 25,
   "anti_sample": 2000,
   "seed": 11
 }
