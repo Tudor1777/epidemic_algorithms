@@ -108,6 +108,8 @@ def main() -> None:
             interval=args.anti_interval,
             sample_size=args.anti_sample,
         )
+    elif args.algo == "direct_mail":
+        algo = DirectMail(seed=args.seed + 2)
     else:
         raise ValueError("Unsupported algo")
 
@@ -146,6 +148,12 @@ def main() -> None:
                     op_index[op.op_id] = op
                     if args.algo == "rumor":
                         origin.activate_rumor(op.op_id, budget=args.rumor_budget)
+                    elif args.algo == "direct_mail":
+                        # send to all other replicas immediately
+                        peers = [rid for rid in all_ids if rid != origin.id]
+                        for dst_id in peers:
+                            net.send(tick, origin.id, dst_id, {"kind": "OP", "op": op.to_json()})
+                            origin.ops_sent += 1
 
             # 2) Algorithm periodic step
             for r in replicas:
