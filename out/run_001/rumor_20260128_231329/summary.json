@@ -1,0 +1,13 @@
+{
+  "algo": "rumor",
+  "replicas": 20,
+  "ticks": 2000,
+  "workload_ops_total": 20000,
+  "workload_ops_injected": 4000,
+  "final_residue": 21,
+  "network_msgs_sent": 1152010,
+  "network_msgs_dropped": 57306,
+  "replica_ops_sent_total": 1152010,
+  "replica_ops_received_total": 565378,
+  "replica_ops_applied_total": 52038
+}

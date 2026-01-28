@@ -1,0 +1,14 @@
+{
+  "algo": "rumor",
+  "replicas": 10,
+  "ticks": 400,
+  "keys": 30,
+  "ops_total": 200,
+  "ops_injected": 200,
+  "final_exact_residue": 0,
+  "network": {
+    "msgs_sent": 27960,
+    "msgs_dropped": 523,
+    "drop_rate": 0.02
+  }
+}

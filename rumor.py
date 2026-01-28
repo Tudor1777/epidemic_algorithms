@@ -60,7 +60,7 @@ class RumorMongering():
 
         if kind == "OP":
             op = Operation.from_json(msg["op"])
-            was_new, _changed = dst.on_receive(op)
+            was_new, _ = dst.on_receive(op)
 
             status = "NEW" if was_new else "SEEN"
             net.send(now, dst.id, src_id, MsgAck(kind="ACK", op_id=op.op_id, status=status).__dict__)

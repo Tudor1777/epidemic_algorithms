@@ -10,7 +10,6 @@ def residue(replicas: List[Dict[str, Record]]) -> int:
     """
     if not replicas:
         return 0
-    # union of keys
     keys = set()
     for st in replicas:
         keys.update(st.keys())

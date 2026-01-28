@@ -1,0 +1,17 @@
+{
+  "keys": 30,
+  "ops": 200,
+  "replicas": 10,
+  "ticks": 400,
+  "inject_per_tick": 1,
+  "outdir": "out/run_001\\rumor_20260129_000338",
+  "drop_rate": 0.02,
+  "progress_every": 10,
+  "algo": "rumor",
+  "rumor_budget": 30,
+  "rumor_fanout": 1,
+  "rumor_stop_threshold": 4,
+  "anti_interval": 25,
+  "anti_sample": 2000,
+  "seed": 11
+}
