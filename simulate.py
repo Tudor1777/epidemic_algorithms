@@ -9,6 +9,7 @@ from typing import Dict, List
 from model import Record, Operation, Timestamp
 from replica import Replica
 from network import Network
+from direct_mail import DirectMail
 
 # metrics.py should contain residue() + residue_fast() as discussed
 from metrics import residue, residue

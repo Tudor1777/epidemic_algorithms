@@ -13,7 +13,7 @@
   "rumor_budget": 30,
   "rumor_fanout": 1,
   "rumor_stop_threshold": 4,
-  "anti_interval": 20,
+  "anti_interval": 25,
   "anti_sample": 2000,
   "seed": 11
 }
