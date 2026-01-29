@@ -1,0 +1,14 @@
+{
+  "algo": "anti_entropy",
+  "replicas": 10,
+  "ticks": 400,
+  "keys": 30,
+  "ops_total": 200,
+  "ops_injected": 200,
+  "final_residue": 0,
+  "network": {
+    "msgs_sent": 316,
+    "msgs_dropped": 8,
+    "drop_rate": 0.02
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "algo": "direct_mail",
+  "replicas": 10,
+  "ticks": 400,
+  "keys": 30,
+  "ops_total": 200,
+  "ops_injected": 200,
+  "final_residue": 3,
+  "network": {
+    "msgs_sent": 1800,
+    "msgs_dropped": 28,
+    "drop_rate": 0.02
+  }
+}

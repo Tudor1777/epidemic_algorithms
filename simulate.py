@@ -14,9 +14,10 @@ from direct_mail import DirectMail
 from rumor import RumorMongering
 from anti_entropy import AntiEntropy
 
-# keep a single exact divergence metric (simple)
 from metrics import residue
 
+def ensure_dir(p: str) -> None:
+    os.makedirs(p, exist_ok=True)
 
 def make_database(keys: int) -> Dict[str, Record]:
     base: Dict[str, Record] = {}
@@ -48,6 +49,7 @@ def make_updates(rnd: random.Random, replicas: int, keys: int, ops: int) -> List
 
 
 def main() -> None:
+
     ap = argparse.ArgumentParser()
 
     # small synthetic data
@@ -86,6 +88,8 @@ def main() -> None:
     # auto outdir: algo + timestamp
     run_id = datetime.now().strftime("%Y%m%d_%H%M%S")
     args.outdir = os.path.join(args.outdir, f"{args.algo}_{run_id}")
+
+    ensure_dir(args.outdir)
 
     rnd = random.Random(args.seed)
 
