@@ -4,10 +4,6 @@ from model import Record
 
 
 def residue(replicas: List[Dict[str, Record]]) -> int:
-    """
-    Counts keys whose records differ across replicas.
-    We compare (deleted, value, ts) tuples.
-    """
     if not replicas:
         return 0
     keys = set()

@@ -12,20 +12,14 @@ class Replica:
         self.seen_ops: Set[str] = set()
         self.rnd = random.Random(seed)
 
-        # rumor state: op_id -> remaining_budget, plus "already_seen" counters
         self.active_rumors: Dict[str, int] = {}
         self.rumor_already_seen_hits: Dict[str, int] = {}
 
-        # metrics
         self.ops_applied = 0
         self.ops_received = 0
         self.ops_sent = 0
 
     def apply(self, op: Operation) -> bool:
-        """
-        Apply operation using LWW + tombstone.
-        Returns True if it changed local store (i.e., op was newer than current record).
-        """
         cur = self.store.get(op.key)
         incoming_ts = op.ts
         if cur is None or incoming_ts > cur.ts:
@@ -40,10 +34,6 @@ class Replica:
         return False
 
     def on_receive(self, op: Operation) -> Tuple[bool, bool]:
-        """
-        Process incoming op with dedup.
-        Returns (was_new_op, changed_state)
-        """
         self.ops_received += 1
         if op.op_id in self.seen_ops:
             return False, False

@@ -8,13 +8,6 @@ from network import Network
 
 
 class DirectMail:
-    """
-    Direct-mail dissemination:
-    - No periodic tick work.
-    - On receiving an OP message, apply it and index it.
-    - The simulator broadcasts newly-injected ops from the origin to all replicas
-      (see changes in `simulate.py`).
-    """
     def __init__(self, seed: int):
         self.rnd = random.Random(seed)
 

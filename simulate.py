@@ -19,7 +19,6 @@ from metrics import residue
 
 
 def make_database(keys: int) -> Dict[str, Record]:
-    # small identical initial DB for all replicas
     base: Dict[str, Record] = {}
     for i in range(keys):
         k = f"k{i}"
@@ -28,7 +27,6 @@ def make_database(keys: int) -> Dict[str, Record]:
 
 
 def make_updates(rnd: random.Random, replicas: int, keys: int, ops: int) -> List[Operation]:
-    # small in-memory updates (no JSON files)
     w: List[Operation] = []
     for i in range(ops):
         origin_id = f"R{rnd.randrange(replicas)}"
@@ -85,7 +83,7 @@ def main() -> None:
     ap.add_argument("--seed", type=int, default=11)
     args = ap.parse_args()
 
-    # auto outdir: algo + timestamp (variant 2)
+    # auto outdir: algo + timestamp
     run_id = datetime.now().strftime("%Y%m%d_%H%M%S")
     args.outdir = os.path.join(args.outdir, f"{args.algo}_{run_id}")
 
@@ -158,7 +156,6 @@ def main() -> None:
                                 net.send(tick, origin.id, dst_id, {"kind": "OP", "op": op.to_json()})
                                 origin.ops_sent += 1
 
-                    # anti-entropy: nothing special on inject (periodic)
 
             # 2) periodic step
             for r in replicas:

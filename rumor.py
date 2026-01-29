@@ -9,14 +9,14 @@ from network import Network
 
 @dataclass
 class MsgOp:
-    kind: str  # "OP"
+    kind: str
     op: dict
 
 @dataclass
 class MsgAck:
-    kind: str  # "ACK"
+    kind: str
     op_id: str
-    status: str  # "NEW" or "SEEN"
+    status: str
 
 
 class RumorMongering():
